@@ -1,0 +1,1 @@
+export default function Tabs({tabs,active,onChange}){return <div className='mb-4 flex gap-2'>{tabs.map(t=><button key={t} onClick={()=>onChange(t)} className={`rounded-lg px-3 py-1.5 text-sm ${active===t?'bg-[#6c63ff] text-white':'bg-[#22222f] text-[#9898a8]'}`}>{t}</button>)}</div>}

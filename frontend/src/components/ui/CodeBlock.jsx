@@ -1,0 +1,2 @@
+import Button from './Button'
+export default function CodeBlock({code}){const lines=code.split('\n');return <div className='rounded-xl border border-[rgba(255,255,255,0.08)] bg-[#0d1117] p-3'><div className='mb-2 flex justify-end'><Button variant='neutral' className='px-2 py-1 text-xs' onClick={()=>navigator.clipboard.writeText(code)}>Copy</Button></div><pre className='overflow-auto text-xs leading-6 text-[#d1d5db]'>{lines.map((l,i)=><div key={i}><span className='mr-3 inline-block w-6 text-right text-[#5a5a6e]'>{i+1}</span>{l}</div>)}</pre></div>}

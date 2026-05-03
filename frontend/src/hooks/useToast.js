@@ -1,0 +1,2 @@
+import { useCallback,useState } from 'react'
+let id=1;export default function useToast(){const[toasts,setToasts]=useState([]);const pushToast=useCallback((t)=>{const tid=id++;setToasts(p=>[{id:tid,...t},...p].slice(0,3));setTimeout(()=>setToasts(p=>p.filter(x=>x.id!==tid)),3000)},[]);const removeToast=useCallback((tid)=>setToasts(p=>p.filter(x=>x.id!==tid)),[]);return{toasts,pushToast,removeToast}}

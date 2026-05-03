@@ -1,0 +1,2 @@
+import Spinner from './Spinner'
+export default function Button({children,loading,className='',variant='primary',...props}){const v={primary:'bg-[#6c63ff] hover:bg-[#7c73ff] text-white',danger:'bg-[#ef4444] text-white',neutral:'bg-[#22222f] text-[#f1f1f3] border border-[rgba(255,255,255,0.08)]'};return <button className={`inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 transition disabled:opacity-60 ${v[variant]} ${className}`} disabled={loading||props.disabled} {...props}>{loading&&<Spinner/>}{children}</button>}

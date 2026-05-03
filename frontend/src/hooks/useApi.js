@@ -1,0 +1,2 @@
+import { useCallback,useState } from 'react'
+export default function useApi(fn){const[loading,setLoading]=useState(false);const[error,setError]=useState('');const execute=useCallback(async(...a)=>{setLoading(true);setError('');try{const r=await fn(...a);return r.data}catch(e){const m=e?.response?.data?.detail||e.message||'Request failed';setError(m);throw new Error(m)}finally{setLoading(false)}},[fn]);return{execute,loading,error}}
